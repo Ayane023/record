@@ -7,7 +7,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>Book Memo
+    </title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
     </head>
     <body class="antialiased">
         <div class='wrapper'>
-        <h1>Blog Name</h1>
+        <h1>Book Memo</h1>
     　　<a href='/reviews/create'>投稿する</a>
         <div class='posts'>
             @foreach ($reviews as $review)
@@ -38,6 +39,7 @@
                     <p class='post-ttl'>{{ $review->book->name }}</p> 
                     </div>
                     </div>
+                    <p class='post_coment_letter'>一言コメント</p>
                     <p class='post-coment'>{{ $review->comment }}</p>
 
     </div>

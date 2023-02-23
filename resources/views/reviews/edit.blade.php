@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-    show
+    edit
     </x-slot>
  
  <!DOCTYPE html>
@@ -19,8 +19,10 @@
     </head>
     <body class="antialiased">
     <div class='wrapper'>
-        <h1>Book Memo</h1>
-    
+        <h1>編集画面</h1>
+    <form action="/reviews/{{ $review->id }}" method="POST">
+            @csrf
+            @method('PUT')
                 <div class='post-flex'>
                         
                 <div class='post-img'>
@@ -31,17 +33,25 @@
                     <p class='post-ttl'>{{ $review->book->name }}</p> 
                     <p class='post-category'>{{ $review->book->category->name }}</p>
                     <p class='post-publisher'>{{ $review->book->publisher }}</p> 
-                    <p class='post-datetime'>読了日：{{ $review->Finished_date }}</p>
+                    <div class="post-datetime">
+                <h2>読了日</h2>
+                <input type="date" name="review[Finished_date]" value="{{ $review->Finished_date }}"/>
+            </div>
+                
                 </div>
                 
 
                 </div>
                  <p class='post_coment_letter'>一言コメント</p>
-                    <p class='post-coment'>{{ $review->comment }}</p>
-                    <p class='post-body'>{{ $review->body }}</p>
-    <div class="edit">
-            <a href="/reviews/{{ $review->id }}/edit">編集する</a>
-        </div>
+                     <input type="text" name="review[comment]" value="{{ $review->comment }}"/>
+                <div class="body">
+                <h2>レビュー</h2>
+                <input type="text" name="review[body]" value="{{ $review->body }}"/>
+            </div>
+                    
+                    <input type="submit" value="保存する"/>
+        </form>
+
         <div class="footer">
             <a href="/index">戻る</a>
         </div>
