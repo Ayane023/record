@@ -44,12 +44,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function reviews()   
+    public function reviews_like()   
 {
     return $this->hasMany(Review::class, likes);  
-    return $this->hasMany(Review::class);  
-
+    
 }
+
+ public function reviews_create()   
+{
+    return $this->hasMany(Review::class,);  
+    
+}
+
+
+
 
 
 

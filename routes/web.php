@@ -41,3 +41,6 @@ Route::get('/reviews/{review}', [ReviewController::class ,'show']);
 // 8－4 投稿作成画面
 
 Route::post('/reviews', [ReviewController::class, 'store']);
+
+Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
+Route::put('/reviews/{review}', [ReviewController::class, 'update']);
