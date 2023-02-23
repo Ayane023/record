@@ -1,0 +1,56 @@
+h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.wrapper{
+    max-width: 720px;
+    margin: 0 auto; 
+}
+
+.post {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+.post-inner{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.post-flex{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.post-content{
+    width: 70%;
+}
+
+.post-author{
+    font-size: 12px;
+}
+.post-ttl{
+    font-size: 28px;
+}
+
+.post-coment {
+    border: solid 1px #6091d3;
+    text-align: center;
+    margin-top: 8px;
+    
+}
+
+.post-body{
+    white-space: nowrap;
+    border: solid 1px #6091d3;
+    text-align: center;
+    margin-top: 8px;
+    
+}
