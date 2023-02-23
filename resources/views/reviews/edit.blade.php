@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-    edit
+    編集画面
     </x-slot>
  
  <!DOCTYPE html>
@@ -19,7 +19,7 @@
     </head>
     <body class="antialiased">
     <div class='wrapper'>
-        <h1>編集画面</h1>
+        <h1>Book Memo</h1>
     <form action="/reviews/{{ $review->id }}" method="POST">
             @csrf
             @method('PUT')

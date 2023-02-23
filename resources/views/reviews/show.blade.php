@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-    show
+    詳細画面
     </x-slot>
  
  <!DOCTYPE html>
