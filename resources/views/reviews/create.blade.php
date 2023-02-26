@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-    index
+    投稿画面
     </x-slot>
  
  <!DOCTYPE html>
@@ -40,7 +40,12 @@
                 <h2>読了日</h2>
                 <input type="date" name="review[Finished_date]" placeholder="○○○○年○月○日"/>
             </div>
-            <div class="title">
+            <div class="score">
+                <h2>満足度</h2>
+                <input type="number" name="review[score]" min="0" max="100"/>
+            </div>
+            
+            <div class="coment">
                 <h2>一言コメント</h2>
                 <input type="text" name="review[comment]" placeholder="面白かった。"/>
             </div>

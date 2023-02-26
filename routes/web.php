@@ -3,6 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +48,11 @@ Route::post('/reviews', [ReviewController::class, 'store']);
 
 Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
 Route::put('/reviews/{review}', [ReviewController::class, 'update']);
+Route::get('/books/create', [BookController::class, 'create']);
+Route::get('/books/{review}', [BookController::class ,'list']);
+
+Route::post('/books', [BookController::class, 'store']);
+Route::get('/categories/create', [CategoryController::class, 'create']);
+
+Route::post('/categories', [CategoryController::class, 'store']);
+

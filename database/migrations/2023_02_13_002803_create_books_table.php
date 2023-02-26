@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('author');
             $table->string('publisher');
-            $table->string('image_path');
+            $table->string('image_path')->default('https://placehold.jp/eeeeee/cccccc/120x150.png?text=No Image');
             $table->foreignId('category_id')->constrained();
             $table->timestamps();
             $table->softDeletes();

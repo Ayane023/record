@@ -36,6 +36,7 @@ protected $fillable = [
     'user_id',
     'book_id',
     'Finished_date',
+    'score',
     'comment',
     'body',
 ];
