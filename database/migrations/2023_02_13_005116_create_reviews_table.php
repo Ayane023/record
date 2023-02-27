@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('book_id')->constrained();
             $table->dateTime('Finished_date');
+            $table->integer('score');
             $table->string('comment');
             $table->text('body');
             $table->timestamps();

@@ -21,14 +21,23 @@
         <div class='wrapper'>
         <h1>Book Memo</h1>
     　　<a href='/reviews/create'>投稿する</a>
+    　　<a href='/books/create'>本を登録する</a>
+    　　<a href='/categories/create'>カテゴリーを登録する</a>
         <div class='posts'>
             @foreach ($reviews as $review)
                 <div class='post'>
-                <a class=post_link href="/reviews/{{ $review->id }}">
+               
                      <div class='post-inner'>
+                         
+                    <div class='post-user-wrapper'>
+                    <a class=post-user-link href="/books/{{ $review->user->id }}">
                     <p class='post-user'>{{ $review->user->name }}</p> 
                     <img class='post-user'>{{ $review->user->image_path}}</p> 
-                    
+                    </a>
+                    </div>
+                     
+                     
+                    <a class=post_link href="/reviews/{{ $review->id }}">
                     <div class='post-flex'>
                         
                     <div class='post-img'>
@@ -37,6 +46,8 @@
                     <div class='post-content'>
                     <p class='post-author'>{{ $review->book->author }}</p> 
                     <p class='post-ttl'>{{ $review->book->name }}</p> 
+                    <p class='post-score'>満足度：{{ $review->score }}・</p> 
+                    
                     </div>
                     </div>
                     <p class='post_coment_letter'>一言コメント</p>
