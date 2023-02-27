@@ -23,8 +23,10 @@ public function store(Request $request, Book $book)
 {
     $input = $request['book'];
     $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-    $input += ['image_url' => $image_url];
+  
+    $input += ['image_path' => $image_url];
     $book->fill($input)->save();
+    
     return redirect('/index');
 }
 
