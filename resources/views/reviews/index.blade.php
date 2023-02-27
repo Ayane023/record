@@ -1,13 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
-    index
+    レビュー一覧
     </x-slot>
  
  <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>Book Memo
+    </title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
     </head>
     <body class="antialiased">
         <div class='wrapper'>
-        <h1>Blog Name</h1>
+        <h1>Book Memo</h1>
     　　<a href='/reviews/create'>投稿する</a>
         <div class='posts'>
             @foreach ($reviews as $review)
@@ -38,17 +39,37 @@
                     <p class='post-ttl'>{{ $review->book->name }}</p> 
                     </div>
                     </div>
+                    <p class='post_coment_letter'>一言コメント</p>
                     <p class='post-coment'>{{ $review->comment }}</p>
+                     </a>
+                    <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="post">
+@csrf
+@method('DELETE')
+<button type="button" onclick="deleteReview({{ $review->id }})">delete</button>
+</form>
 
-    </div>
-                </a>
+        </div>
+            
+    
+               
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $reviews->links() }}
         </div>
+        
+        
 </div>
+<script>
+    function deleteReview(id) {
+        'use strict'
+
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+    }
+ </script>
 </body>
 </html>
 

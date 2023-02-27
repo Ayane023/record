@@ -41,16 +41,15 @@ h1{
 }
 
 .post-coment {
+    width: fit-content;
     border: solid 1px #6091d3;
-    text-align: center;
     margin-top: 8px;
     
 }
 
 .post-body{
-    white-space: nowrap;
+    word-break: break-all;
     border: solid 1px #6091d3;
-    text-align: center;
     margin-top: 8px;
     
 }

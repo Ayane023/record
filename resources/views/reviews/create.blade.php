@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-    index
+    レビュー作成画面
     </x-slot>
  
  <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>Book Memo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,24 +18,25 @@
     </head>
     <body class="antialiased">
     <div class='wrapper'>
-        <h1>Blog Name</h1>
+        <h1>Book Memo</h1>
     　
        <form action="/reviews" method="POST">
             @csrf
             <div class="title">
                 <h2>読んだ本</h2>
-               @foreach($books as $book)
-
-            <label>
-                {{-- valueを'$bookのid'に、nameを'配列名[]'に --}}
-                <input type="checkbox" value="{{ $book->id }}" name="review[book_id]">
-                    {{$book->name}}
-                </input>
-            </label>
-            
-        @endforeach    
+                
+                <select name="review[book_id]" id="selectform">
+                     @foreach($books as $book)
+                        <option value="{{ $book->id }}">
+                             {{$book->name}}
+                        </option>
+                    @endforeach    
+                </select>
+              
+              
+        
             </div>
-             <div class="">
+             <div class="post-datetime">
                 <h2>読了日</h2>
                 <input type="date" name="review[Finished_date]" placeholder="○○○○年○月○日"/>
             </div>
@@ -44,10 +45,10 @@
                 <input type="text" name="review[comment]" placeholder="面白かった。"/>
             </div>
             <div class="body">
-                <h2>Body</h2>
+                <h2>レビュー</h2>
                 <textarea name="review[body]" placeholder="自由記載"></textarea>
             </div>
-            <input type="submit" value="store"/>
+            <input type="submit" value="保存する"/>
         </form>
         <div class="footer">
             <a href="/index">戻る</a>

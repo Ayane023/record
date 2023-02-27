@@ -37,4 +37,26 @@ public function store(Request $request, Review $review)
     $review->fill($input)->save();
     return redirect('/reviews/' . $review->id);
 }
+
+public function edit(Review $review)
+{
+    return view('reviews/edit')->with(['review' => $review]);
+    
+}
+
+public function update(Request $request, Review $review)
+{
+    $input_post = $request['review'];
+    $review->fill($input_post)->save();
+
+    return redirect('/reviews/' . $review->id);
+}
+
+public function delete(Review $review)
+{
+    $review->delete();
+    return redirect('/index');
+}
+
+
 }
