@@ -20,6 +20,9 @@
     <body class="antialiased">
     <div class='wrapper'>
         <h1>Book Memo</h1>
+        <a class=post-user-link href="/books/{{ $review->user->id }}">
+                <div class='post-user'>{{ $review->user->name }}</p> 
+                </a>
     
                 <div class='post-flex'>
                         
@@ -32,6 +35,7 @@
                     <p class='post-category'>{{ $review->book->category->name }}</p>
                     <p class='post-publisher'>{{ $review->book->publisher }}</p> 
                     <p class='post-datetime'>読了日：{{ $review->Finished_date }}</p>
+                    <p class='post-score'>満足度：{{ $review->score }}点</p>
                 </div>
                 
 
