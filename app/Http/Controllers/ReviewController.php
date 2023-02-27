@@ -53,4 +53,11 @@ public function update(Request $request, Review $review)
     return redirect('/reviews/' . $review->id);
 }
 
+public function delete(Review $review)
+{
+    $review->delete();
+    return redirect('/index');
+}
+
+
 }

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-    投稿画面
+    レビュー作成画面
     </x-slot>
  
  <!DOCTYPE html>

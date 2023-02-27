@@ -56,3 +56,4 @@ Route::get('/categories/create', [CategoryController::class, 'create']);
 
 Route::post('/categories', [CategoryController::class, 'store']);
 
+Route::delete('/reviews/{review}', [ReviewController::class,'delete']);
